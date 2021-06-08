@@ -1,0 +1,22 @@
+Package: Econanalysis
+Title: Conduct Analysis on Datasets From FRED
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tanvi",
+           family = "Chiddarwar",
+           role = c("aut", "cre"),
+           email = "tanvi.chiddarwar@gmail.com")
+Description: This package is used to conduct analysis on datasets from FRED. It is used to automate tasks like making certain plots and conducting linear regression as well as transforming datasets for otheer use. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+  tidyverse, 
+  lubridate, 
+  ggplot2
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
