@@ -19,3 +19,70 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(Econanalysis)
 ```
+
+
+# Package Econanalysis 
+
+This package includes functions to automate analysis of Economic Datasets from the FRED website. These functions are specialized to work with specifically these datasets. 
+
+## Function Tutorials 
+
+In the following section we will look at some of these functions in action
+
+### gdp_analysis and debt_analysis
+
+It is important to have the right dataset in order to use this function as the variables are specific to the ones used on the FRED website. 
+
+
+```{r}
+# Where gdp is the GDP dataset over time from FRED 
+
+gdp_analysis(gdp)
+
+# Where debt is the Public debt dataset over time from FRED 
+
+debt_analysis(debt)
+```
+
+
+## debt_gdp_analysis
+
+This function combines the public debt dataset and GDP dataset using join by date. It then plots both of them on the same graph. 
+
+```{r}
+debt_gdp_analysis(debt, gdp)
+```
+
+## percent_change 
+
+This function creates a new column in the dataset that shows the percent change over the years. 
+This new variable will be labelled $pct_change$
+
+In this example we will create a new column in the unemployment dataset which will be the change in unemployment rate over the years. We will save this back into the dataset. 
+```{r}
+unemp <- percent_change(unemp, UNRATE)
+```
+
+
+## okuns_law
+
+This function allows to use FRED datasets to see if Okun's Law of the relationship between change in GDP and unemployment rate applies in real life.  
+
+Once the datasets are specified, a summary of the linear regression and a plot are returned back. 
+
+```{r}
+okuns_law(gdp, unemp)
+```
+
+
+## philips
+
+This function allows to use FRED datasets to create Philip's Curve of the inflation rate versus the unemployment rate. 
+
+Once the datasets are specified, they are combined using a join and then a plot depicting the relationship between the two is returned. 
+
+```{r}
+philips(infl, unemp)
+```
+
+
